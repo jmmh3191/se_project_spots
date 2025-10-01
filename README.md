@@ -10,7 +10,7 @@
 
 This project is made so all the elements are displayed correctly on popular screen sizes such as 1440px and 627px, computer and mobile sized, respectively, using media query.
 
-Please follow the link if you'd like to watch a video of me briefly describing the project. https://drive.google.com/file/d/18uap5nLZO6n-puSlctoXz91FZvLXE5vN/view?usp=share_link
+Please follow the link if you'd like to watch a video of me briefly describing the project. https://drive.google.com/file/d/1CecgOztFe9-E0NnzvrOpn56BnO9KJQoy/view?usp=share_link
 
 Here is a link to the project itself. https://jmmh3191.github.io/se_project_spots/
 
