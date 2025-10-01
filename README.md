@@ -10,6 +10,8 @@
 
 This project is made so all the elements are displayed correctly on popular screen sizes such as 1440px and 627px, computer and mobile sized, respectively, using media query.
 
+Please follow the link if you'd like to watch a video of me briefly describing the project. https://drive.google.com/file/d/18uap5nLZO6n-puSlctoXz91FZvLXE5vN/view?usp=share_link
+
 **Figma**
 
 - [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)

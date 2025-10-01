@@ -14,6 +14,8 @@
 .profile__column {
   display: flex;
   flex-direction: column;
+  align-items: start;
+  max-width: 420px;
 }
 
 .profile__edit-btn {
@@ -129,6 +131,8 @@
 
   .profile__column {
     margin: 0 0 20px;
+    align-items: center;
+    text-align: center;
   }
 
   .profile__description {
@@ -144,7 +148,8 @@
 
   .profile__add-btn {
     margin: 0;
-    max-width: 288px;
+    padding: 0;
+    max-width: 630px;
     width: 100%;
   }
 }
