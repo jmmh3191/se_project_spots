@@ -54,4 +54,4 @@ function handleAddCardSubmit(evt) {
   newPostModal.classList.remove("modal_is-opened");
 }
 
-newPostBtn.addEventListener("submit", handleAddCardSubmit);
+addCardFormElement.addEventListener("submit", handleAddCardSubmit);
