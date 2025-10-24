@@ -50,15 +50,26 @@
 }
 
 .modal__close-btn:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .modal__close-btn_preview:hover {
-  opacity: 40%;
+  opacity: 0.4;
   transition: opacity 0.3s;
 }
 
 .modal__title {
+  margin: 0 0 32px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  color: black;
+  padding: 0;
+  border-radius: 8px;
+  width: fit-content;
+  text-align: center;
+}
+
+.modal__caption {
   margin: 0 0 32px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -82,7 +93,7 @@
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 110%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .modal__input {
@@ -116,7 +127,7 @@
 }
 
 .modal__submit-btn:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .modal__container {
@@ -136,7 +147,7 @@
 }
 
 .modal__image {
-  max-width: unset;
+  max-width: 80vw;
   max-height: 80vh;
   margin: 8px 0;
   width: 100%;
@@ -156,8 +167,12 @@
   }
 
   .modal__close-btn_preview {
-    top: -48px;
-    right: 0;
+    top: 12px;
+    right: 12px;
+  }
+
+  .modal__caption {
+    font-size: 16px;
   }
 
   .modal__image {
