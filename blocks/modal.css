@@ -29,7 +29,7 @@
   padding: 0;
   border: none;
   background-color: #fff;
-  opacity: 40%;
+  opacity: 0.4;
   position: absolute;
   top: 32px;
   right: 50px;
@@ -124,6 +124,10 @@
   color: rgba(255, 0, 0, 0.7);
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 16px;
+}
+
+.modal__eror_visible {
+  opacity: 1;
 }
 
 .modal__submit-btn {
