@@ -120,23 +120,23 @@ function closeModal(modal) {
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  resetValidation(editProfileForm, [
-    editProfileNameInput,
-    editProfileDescriptionInput,
-  ]);
+  resetValidation(
+    editProfileForm,
+    [editProfileNameInput, editProfileDescriptionInput],
+    settings
+  );
   openModal(editProfileModal);
 });
 
-editProfileCloseBtn.addEventListener("click", function () {
-  closeModal(editProfileModal);
+const closeButtons = document.querySelectorAll(".modal__close-btn");
+
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(modal));
 });
 
 newPostBtn.addEventListener("click", function () {
   openModal(newPostModal);
-});
-
-newPostCloseBtn.addEventListener("click", function () {
-  closeModal(newPostModal);
 });
 
 function handleEditProfileSubmit(evt) {
@@ -148,25 +148,27 @@ function handleEditProfileSubmit(evt) {
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
+function renderCard(item, method = "prepend") {
+  const cardElement = getCardElement(item);
+
+  cardsList[method](cardElement);
+}
+
+addCardFormElement.addEventListener("reset", () => {
+  disableButton(cardSubmitBtn, settings);
+});
+
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const captionValue = captionInput.value;
   const linkValue = linkInput.value;
-  console.log(captionValue);
-  console.log(linkValue);
-  const cardElement = getCardElement({
-    name: captionValue,
-    link: linkValue,
-  });
-  cardsList.prepend(cardElement);
+  renderCard({ name: captionValue, link: linkValue });
   evt.target.reset();
-  disableButton(cardSubmitBtn, settings);
   closeModal(newPostModal);
 }
 
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (item) {
-  const cardElement = getCardElement(item);
-  cardsList.append(cardElement);
+  renderCard(item, "append");
 });
