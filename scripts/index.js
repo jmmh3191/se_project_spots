@@ -1,3 +1,5 @@
+import { enableValidation, validationConfig } from "./validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -26,7 +28,6 @@ const initialCards = [
 ];
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const editProfileCloseBtn = document.querySelector(".modal__close-btn");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
@@ -42,7 +43,6 @@ const linkInput = document.querySelector("#card-image-input");
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const cardSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
-const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
@@ -123,7 +123,7 @@ editProfileBtn.addEventListener("click", function () {
   resetValidation(
     editProfileForm,
     [editProfileNameInput, editProfileDescriptionInput],
-    settings
+    validationConfig
   );
   openModal(editProfileModal);
 });
@@ -155,7 +155,7 @@ function renderCard(item, method = "prepend") {
 }
 
 addCardFormElement.addEventListener("reset", () => {
-  disableButton(cardSubmitBtn, settings);
+  disableButton(cardSubmitBtn, validationConfig);
 });
 
 function handleAddCardSubmit(evt) {
@@ -172,3 +172,5 @@ addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach(function (item) {
   renderCard(item, "append");
 });
+
+enableValidation(validationConfig);
