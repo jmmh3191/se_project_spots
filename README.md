@@ -23,7 +23,7 @@ For layout of content, the diminsions were derived from the 1440px and mobile ex
 
 **Images**
 
-To optimize images and reduce their size, (https://tinypng.com/), was used to load images faster on the page.
+To optimize images, (https://tinypng.com/), was used to load images faster on the page.
 
 **Technologies/Techniques**
 
