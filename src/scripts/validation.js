@@ -22,29 +22,26 @@ const hideInputError = (formEl, inputEl, config) => {
 };
 
 const getErrorMessage = (inputEl) => {
+  const maxLength = inputEl.getAttribute("maxlength");
+
+  if (maxLength && inputEl.value.length >= maxLength) {
+    return `Maximum limit of ${maxLength} characters reached`;
+  }
+
   if (inputEl.type === "url" && !inputEl.validity.valid) {
     return "Please enter a url";
   }
+
   if (inputEl.validity.tooShort) {
     const minLength = inputEl.getAttribute("minlength");
     return `Please enter at least ${minLength} characters`;
   }
-  if (inputEl.validity.tooLong) {
-    const maxLength = inputEl.getAttribute("maxlength");
-    return `Please enter no more than ${maxLength} characters`;
-  }
+
   if (inputEl.validity.valueMissing) {
     return "Please fill out this field";
   }
-  return inputEl.validationMessage; // fallback
-};
 
-const checkInputValidity = (formEl, inputEl, config) => {
-  if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, getErrorMessage(inputEl), config);
-  } else {
-    hideInputError(formEl, inputEl, config);
-  }
+  return inputEl.validationMessage;
 };
 
 const hasInvalidInput = (inputList) => {

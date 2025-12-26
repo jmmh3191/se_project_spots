@@ -178,7 +178,119 @@
   display: block;
 }
 
+#delete-modal-close {
+  background-image: url(../images/delete-modal-btn.svg);
+  transition: none;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  right: -40px;
+  background-color: transparent;
+}
+
+#edit-profile-avatar {
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+#cards-delete-confirmation {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#delete-form-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+#are-you-sure {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+#delete-confirm {
+  background-color: rgba(255, 101, 101, 1);
+  color: black;
+}
+
+#delete-confirm:hover {
+  background-color: rgba(255, 51, 51, 1);
+}
+
+#cancel-confirm {
+  background-color: rgba(255, 255, 255, 1);
+  color: black;
+  border: 1px solid black;
+}
+
+#cancel-confirm:hover {
+  background-color: rgba(33, 33, 33, 1);
+  color: #fff;
+}
+
 @media screen and (max-width: 627px) {
+  #delete-modal {
+    display: flex;
+    background-color: #000000d0;
+  }
+  #delete-modal-close {
+    top: -50px;
+    right: 0px;
+  }
+  #cards-delete-confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 22px 12px 12px;
+  }
+  #delete-form-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  #delete-confirm,
+  #cancel-confirm {
+    width: 156px !important;
+    height: 52px !important;
+    flex: none !important;
+    margin: 0 !important;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #edit-profile-avatar {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
+  }
+  #avatar-modal {
+    background-color: #000000d0;
+  }
+  #are-you-sure {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+  }
   .modal__container {
     padding: 22px 12px 12px;
   }
@@ -208,9 +320,13 @@
   .modal__input {
     font-size: 16px;
   }
+
   .modal__submit-btn {
     box-sizing: border-box;
     max-width: none;
     width: 100%;
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 12px;
   }
 }
