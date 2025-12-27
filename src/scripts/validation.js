@@ -44,6 +44,20 @@ const getErrorMessage = (inputEl) => {
   return inputEl.validationMessage;
 };
 
+const checkInputValidity = (formEl, inputEl, config) => {
+  const maxLength = inputEl.getAttribute("maxlength");
+
+  if (
+    !inputEl.validity.valid ||
+    (maxLength && inputEl.value.length >= maxLength)
+  ) {
+    const errorMessage = getErrorMessage(inputEl);
+    showInputError(formEl, inputEl, errorMessage, config);
+  } else {
+    hideInputError(formEl, inputEl, config);
+  }
+};
+
 const hasInvalidInput = (inputList) => {
   return inputList.some((input) => {
     return !input.validity.valid;
