@@ -212,13 +212,7 @@ function handleEditProfileSubmit(evt) {
         closeModal(editProfileModal);
       });
   }
-  handleSubmit(
-    makeRequest,
-    evt,
-    "Saving...",
-    editProfileNameInput,
-    validationConfig
-  );
+  handleSubmit(makeRequest, evt);
 }
 
 function handleAvatarSubmit(evt) {
@@ -228,8 +222,7 @@ function handleAvatarSubmit(evt) {
       closeModal(avatarModal);
     });
   }
-
-  handleSubmit(makeRequest, evt, "Saving...", avatarUrlInput, validationConfig);
+  handleSubmit(makeRequest, evt);
 }
 
 function handleAddCardSubmit(evt) {
@@ -242,10 +235,9 @@ function handleAddCardSubmit(evt) {
       .then((data) => {
         renderCard(data);
         closeModal(newPostModal);
-        disableButton(cardSubmitBtn, validationConfig);
       });
   }
-  handleSubmit(makeRequest, evt, "Saving...", linkInput, validationConfig);
+  handleSubmit(makeRequest, evt);
 }
 
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
@@ -257,7 +249,6 @@ deleteForm.addEventListener("submit", (event) => {
       closeModal(deleteModal);
     });
   }
-
   handleSubmit(makeRequest, event, "Deleting...");
 });
 
