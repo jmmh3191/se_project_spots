@@ -170,12 +170,14 @@
 
   .profile__name {
     font-size: 20px;
-    margin: 0 0 6px;
     max-width: none;
-    width: 100px !important;
+    width: auto;
+    white-space: nowrap;
   }
+
   .profile__description {
     max-width: none;
+    margin-bottom: 32px;
   }
   .profile__edit-btn {
     margin-top: 20px 0 0;
@@ -192,7 +194,11 @@
   }
 
   .profile__avatar-container {
-    margin: 0 0 12px;
+    margin: 0 0 6px; /* This creates the exact 6px gap to the name below */
+    display: flex;
+    justify-content: center;
+    height: 80px; /* Match the avatar height to prevent vertical stretching */
+    width: 80px;
   }
 
   .profile__avatar-btn {
@@ -200,7 +206,7 @@
     pointer-events: auto;
     background-image: url(../images/pencil-icon-mobile.svg);
     background-repeat: no-repeat;
-    background-position: 95% 73%;
+    background-position: 95% 95%;
   }
 
   .page_modal-opened .profile__avatar-btn {
@@ -210,6 +216,7 @@
 
   .profile__avatar-btn img {
     display: none;
+    height: auto;
   }
 
   .profile__avatar-container:hover .profile__avatar {
