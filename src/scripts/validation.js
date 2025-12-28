@@ -7,7 +7,7 @@ export const validationConfig = {
   errorClass: "modal__error_visible",
 };
 
-const showInputError = (formEl, inputEl, errorMsg, config) => {
+export const showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = errorMsg;
   inputEl.classList.add(config.inputErrorClass);
