@@ -34,6 +34,7 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 
 const deleteModal = document.querySelector("#delete-modal");
 const deleteForm = deleteModal.querySelector(".modal__form");
+const cancelDeleteBtn = document.querySelector("#cancel-confirm");
 
 const previewModal = document.querySelector("#preview-modal");
 const previewModalClosedBtn = previewModal.querySelector(".modal__close-btn");
@@ -250,6 +251,10 @@ deleteForm.addEventListener("submit", (event) => {
     });
   }
   handleSubmit(makeRequest, event, "Deleting...");
+});
+
+cancelDeleteBtn.addEventListener("click", () => {
+  closeModal(deleteModal);
 });
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
