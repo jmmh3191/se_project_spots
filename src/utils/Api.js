@@ -72,6 +72,13 @@ class Api {
     });
   }
 
+  deleteNewCard({ _id }) {
+    return fetch(`${this._baseUrl}/cards/${_id}`, {
+      method: "DELETE",
+      headers: this._headers,
+    }).then(this._checkResponse);
+  }
+
   handleLikeStatus(_id, isLiked) {
     return this._request(`${this._baseUrl}/cards/${_id}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
