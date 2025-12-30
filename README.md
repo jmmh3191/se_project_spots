@@ -1,4 +1,4 @@
-# Spots Final Stage
+# Spots Interactive Social Media App
 
 ### Overview
 
@@ -13,7 +13,7 @@ This project is made so that web deployment occurs with API server integration, 
 
 Please follow the link if you'd like to watch a video of me briefly describing the project. https://drive.google.com/file/d/1CecgOztFe9-E0NnzvrOpn56BnO9KJQoy/view?usp=share_link
 
-Here is a link to the project itself. https://jmmh3191.github.io/se_project_spots/
+Here is a link to the project itself.
 
 **Figma**
 
