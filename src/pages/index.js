@@ -177,41 +177,6 @@ function closeModal(modal) {
   document.removeEventListener("keydown", handleEscapeKey);
 }
 
-editProfileBtn.addEventListener("click", function () {
-  editProfileNameInput.value = profileNameEl.textContent;
-  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  resetValidation(
-    editProfileForm,
-    [editProfileNameInput, editProfileDescriptionInput],
-    validationConfig
-  );
-  openModal(editProfileModal);
-});
-
-closeButtons.forEach((button) => {
-  const modal = button.closest(".modal");
-  button.addEventListener("click", () => closeModal(modal));
-});
-
-newPostBtn.addEventListener("click", function () {
-  openModal(newPostModal);
-});
-
-newPostBtn.addEventListener("click", function () {
-  addCardFormElement.reset();
-
-  resetValidation(
-    addCardFormElement,
-    [captionInput, linkInput],
-    validationConfig
-  );
-  openModal(newPostModal);
-});
-
-avatarBtn.addEventListener("click", function () {
-  openModal(avatarModal);
-});
-
 function handleEditProfileSubmit(evt) {
   function makeRequest() {
     return api
@@ -252,6 +217,36 @@ function handleAddCardSubmit(evt) {
   }
   handleSubmit(makeRequest, evt);
 }
+
+editProfileBtn.addEventListener("click", function () {
+  editProfileNameInput.value = profileNameEl.textContent;
+  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  resetValidation(
+    editProfileForm,
+    [editProfileNameInput, editProfileDescriptionInput],
+    validationConfig
+  );
+  openModal(editProfileModal);
+});
+
+newPostBtn.addEventListener("click", function () {
+  addCardFormElement.reset();
+  resetValidation(
+    addCardFormElement,
+    [captionInput, linkInput],
+    validationConfig
+  );
+  openModal(newPostModal);
+});
+
+avatarBtn.addEventListener("click", function () {
+  openModal(avatarModal);
+});
+
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(modal));
+});
 
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
