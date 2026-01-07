@@ -15,8 +15,10 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card__image:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+@media screen and (min-width: 628px) {
+  .card__image:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .card__content {
@@ -53,8 +55,10 @@
   cursor: pointer;
 }
 
-.card__delete-btn:hover {
-  background-image: url(../images/delete-hover.svg);
+@media screen and (min-width: 628px) {
+  .card__delete-btn:hover {
+    background-image: url(../images/delete-hover.svg);
+  }
 }
 
 .card__like-btn {
@@ -100,5 +104,8 @@
   .card__like-btn {
     height: 18px;
     width: 20px;
+  }
+  .card__delete-btn:hover {
+    background-image: url(../images/delete-hover.svg);
   }
 }
